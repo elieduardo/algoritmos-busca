@@ -34,6 +34,30 @@
 
         static int BuscaBinaria(this IList<int> lista, int elementoProcurado)
         {
+            int inicio, meio, fim;
+            inicio = 0;
+            fim = lista.Count - 1;
+
+            while (inicio <= fim)
+            {
+                meio = (inicio + fim) / 2;
+
+                if (elementoProcurado < lista[meio])
+                {
+                    fim = meio - 1;
+                }
+                else
+                {
+                    if (elementoProcurado < lista[meio])
+                    {
+                        inicio = meio + 1;
+                    }
+                    else
+                    {
+                        return meio;
+                    }
+                }
+            }
             return -1;
         }
     }
