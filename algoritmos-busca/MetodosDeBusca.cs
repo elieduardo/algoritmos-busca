@@ -1,64 +1,71 @@
 ﻿namespace algoritmos_busca
 {
-    static class MetodosDeBusca
+    public class MetodosDeBusca
     {
-        static int BuscaLinear(this IList<int> lista, int elementoProcurado)
+        public void BuscaLinear(List<int> lista, int elementoProcurado)
         {
             for (int i = 0; i < lista.Count; i++)
             {
                 if (lista[i] == elementoProcurado)
                 {
-                    return i;
+                    Console.WriteLine($"Encontrou {elementoProcurado} na posição {i}");
+                    return;
                 }
             }
+            Console.WriteLine($"Não encontrou {elementoProcurado} na lista");
 
-            return -1;
         }
 
-        static int BuscaLinearOrdenada(this IList<int> lista, int elementoProcurado)
+        public void BuscaLinearOrdenada(List<int> lista, int elementoProcurado)
         {
-            for (int i = 0; i < lista.Count; i++)
+            var listaAux = lista.OrdenarLista();
+
+            for (int i = 0; i < listaAux.Count; i++)
             {
-                if (lista[i] == elementoProcurado)
+                if (listaAux[i] == elementoProcurado)
                 {
-                    return i;
+                    Console.WriteLine($"Encotrou {elementoProcurado} na posição {i}");
+                    return;
                 }
-                else if (elementoProcurado < lista[i])
+                else if (elementoProcurado < listaAux[i])
                 {
-                    return -1;
+                    Console.WriteLine($"Não encontrou {elementoProcurado} na lista");
+                    return;
                 }
             }
-
-            return -1;
+            Console.WriteLine($"Não encontrou {elementoProcurado} na lista");
         }
 
-        static int BuscaBinaria(this IList<int> lista, int elementoProcurado)
+        public void BuscaBinaria(List<int> lista, int elementoProcurado)
         {
+            var listaAux = lista.OrdenarLista();
+
             int inicio, meio, fim;
             inicio = 0;
-            fim = lista.Count - 1;
+            fim = listaAux.Count - 1;
 
             while (inicio <= fim)
             {
                 meio = (inicio + fim) / 2;
 
-                if (elementoProcurado < lista[meio])
+                if (elementoProcurado < listaAux[meio])
                 {
                     fim = meio - 1;
                 }
                 else
                 {
-                    if (elementoProcurado < lista[meio])
+                    if (elementoProcurado > listaAux[meio])
                     {
                         inicio = meio + 1;
                     }
                     else
                     {
-                        return meio;
+                        Console.WriteLine($"Encontrou {elementoProcurado} na posição {meio}");
+                        return;
                     }
                 }
             }
-            return -1;
+            Console.WriteLine($"Não encontrou {elementoProcurado} na lista");
         }
     }
 }
