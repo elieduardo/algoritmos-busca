@@ -18,16 +18,14 @@
 
         public void BuscaLinearOrdenada(List<int> lista, int elementoProcurado)
         {
-            var listaAux = lista.OrdenarLista();
-
-            for (int i = 0; i < listaAux.Count; i++)
+            for (int i = 0; i < lista.Count; i++)
             {
-                if (listaAux[i] == elementoProcurado)
+                if (lista[i] == elementoProcurado)
                 {
                     Console.WriteLine($"Encotrou {elementoProcurado} na posição {i}");
                     return;
                 }
-                else if (elementoProcurado < listaAux[i])
+                else if (elementoProcurado < lista[i])
                 {
                     Console.WriteLine($"Não encontrou {elementoProcurado} na lista");
                     return;
@@ -38,23 +36,21 @@
 
         public void BuscaBinaria(List<int> lista, int elementoProcurado)
         {
-            var listaAux = lista.OrdenarLista();
-
             int inicio, meio, fim;
             inicio = 0;
-            fim = listaAux.Count - 1;
+            fim = lista.Count - 1;
 
             while (inicio <= fim)
             {
                 meio = (inicio + fim) / 2;
 
-                if (elementoProcurado < listaAux[meio])
+                if (elementoProcurado < lista[meio])
                 {
                     fim = meio - 1;
                 }
                 else
                 {
-                    if (elementoProcurado > listaAux[meio])
+                    if (elementoProcurado > lista[meio])
                     {
                         inicio = meio + 1;
                     }
