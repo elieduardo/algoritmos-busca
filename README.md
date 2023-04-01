@@ -29,3 +29,10 @@ Trabalho realizado para analisar resultado e tempo de métodos de busca linear, 
 
 ### Teste com 1000000 elementos
 ![1000000 Elementos](/imagens/carga-1000000-elementos.png)
+
+
+## Configurações do computador utilizado
+###Processador
+AMD 6350 six- Core 3.90 GHz
+###Memória: 
+8GB
