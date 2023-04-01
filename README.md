@@ -32,7 +32,7 @@ Trabalho realizado para analisar resultado e tempo de métodos de busca linear, 
 
 
 ## Configurações do computador utilizado
-###Processador
+### Processador
 AMD 6350 six- Core 3.90 GHz
-###Memória: 
+### Memória: 
 8GB
